@@ -1,0 +1,245 @@
+/* ====== Bootstrap Overrides ====== */
+img {
+  max-width: 100%;
+}
+.container {
+  --bs-gutter-x: 2rem;
+}
+.navbar-toggler {
+  border: 0;
+}
+.navbar-toggler span {
+  width: 1.25em;
+  height: 1.25em;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar > *:not(.navbar-collapse) {
+  flex: 1;
+}
+.btn {
+  font-size: 14px;
+  font-weight: bold;
+  min-width: fit-content;
+  line-height: 1.1;
+  border: 0;
+}
+.btn:active {
+  border: 0;
+}
+.btn-primary {
+  background-color: #03c807;
+  color: white;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus-visible {
+  background-color: #03b406 !important;
+}
+.btn-secondary {
+  background-color: white;
+  color: #03c807;
+}
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus-visible {
+  background-color: #e6e6e6 !important;
+  color: #03c807 !important;
+}
+.h1,
+h1 {
+  font-size: calc(1.5rem + 1.5vw);
+}
+@media (min-width: 992px) {
+  .navbar > *:not(.navbar-collapse) {
+    flex: none;
+  }
+  .navbar-nav {
+    gap: 84px;
+  }
+  .navbar-nav .nav-link {
+    font-size: 24px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .navbar {
+    --bs-navbar-padding-y: 0.85rem;
+  }
+  .btn {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .h1,
+  h1 {
+    font-size: 3rem;
+  }
+  .btn {
+    font-size: 1.25rem;
+  }
+  .container {
+    --bs-gutter-x: 5rem;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+/* ====== Custom CSS ====== */
+header,
+.hero-section,
+footer {
+  font-family: 'Epilogue', sans-serif;
+}
+main {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar */
+.navbar-brand img {
+  width: 100px;
+  height: auto;
+}
+.navbar-btns img {
+  width: 20px;
+  height: auto;
+}
+/* Hero section */
+.hero-section {
+}
+.hero-wrapper {
+  min-height: calc(100svh - 78px);
+}
+.hero-img {
+  object-position: center top;
+}
+
+/* Content Section */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 70px 0;
+  width: 94%;
+  margin: 0 auto;
+}
+.content-wrapper section .row {
+  gap: 50px;
+}
+.content-wrapper section .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.content-wrapper section .content > * {
+  margin: 0;
+}
+.content-wrapper section .content h2 {
+  font-size: 1.5rem;
+}
+.content-wrapper section .content p {
+  font-size: 1rem;
+}
+.tag {
+  font-size: 14px;
+}
+/* Footer */
+footer {
+  padding: 62px 0;
+}
+
+.footer-logo img {
+  width: 100px;
+  height: auto;
+}
+.footer-nav a {
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 300;
+  text-decoration: none;
+}
+.footer-nav a:hover,
+.footer-nav a.active {
+  color: rgb(0, 0, 0);
+}
+.social-nav a:hover {
+  opacity: 0.8;
+}
+.social-nav img {
+  width: 40px;
+  height: auto;
+}
+@media (min-width: 992px) {
+  /* Navbar */
+  .navbar-brand img {
+    width: 117px;
+    padding: 0 12px;
+  }
+  .navbar-btns {
+    order: 3;
+  }
+  .navbar-btns img {
+    width: 24px;
+  }
+  /* Hero section */
+  .hero-wrapper {
+    min-height: calc(100svh - 78px);
+  }
+  /* Content section */
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 140px;
+    padding: 140px 0;
+    width: 84%;
+    margin: 0 auto;
+  }
+  .content-wrapper section .row {
+    gap: 136px;
+  }
+  .content-wrapper section .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+  }
+  .content-wrapper section .content > * {
+    margin: 0;
+  }
+  .content-wrapper section .content h2 {
+    font-size: 2.25rem;
+  }
+  .content-wrapper section .content p {
+    font-size: 1.5rem;
+  }
+  .tag {
+    font-size: 20px;
+  }
+  /* Footer */
+  footer {
+    padding: 124px 0;
+  }
+
+  .footer-logo img {
+    width: 140px;
+  }
+  .footer-nav a {
+    font-size: 24px;
+    margin: 0 12px;
+  }
+  .social-nav img {
+    width: 60px;
+    height: auto;
+  }
+}
+@media (min-width: 1500px) {
+  .hero-wrapper {
+    min-height: calc(100svh - 86.5px);
+    min-height: 800px;
+    max-height: 800px;
+  }
+}
