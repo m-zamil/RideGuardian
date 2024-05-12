@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <!-- GSAP Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/custom.css" />
   </head>
@@ -62,14 +65,14 @@
       <div class="content-wrapper">
         <section class="rideguardian-section">
           <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg content">
+            <div class="row align-items-center container1">
+              <div class="col-lg content content1">
                 <span class="fw-bold tag">RideGuardian</span>
                 <h2 class="fw-normal">Drive Safely, Every Night</h2>
                 <p>Your key to safe nights out. Get home safely with our designated drivers, equipped with instant booking and live tracking</p>
                 <a href="#" class="btn btn-primary rounded-pill border-0 px-4 py-3 py-lg-4">Learn more</a>
               </div>
-              <div class="col-lg image">
+              <div class="col-lg image image1">
                 <img src="./assets/images/car.jpg" srcset="./assets/images/car.jpg 1x, ./assets/images/car-2x.jpg 2x" alt="" />
               </div>
             </div>
@@ -77,14 +80,14 @@
         </section>
         <section class="rider-section">
           <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg order-lg-1 content">
+            <div class="row align-items-center container2">
+              <div class="col-lg order-lg-1 content content2">
                 <span class="fw-bold tag">Rider</span>
                 <h2 class="fw-normal">Safe Rides, Made Simple</h2>
                 <p>Book your RideGuardian driver in just a few taps. Sign up, request your ride, and enjoy a secure journey with our rigorously screened drivers</p>
                 <a href="#" class="btn btn-primary rounded-pill border-0 px-4 py-3 py-lg-4">Learn more</a>
               </div>
-              <div class="col-lg image">
+              <div class="col-lg image image2">
                 <img src="./assets/images/map.jpg" srcset="./assets/images/map.jpg 1x, ./assets/images/map-2x.jpg 2x" alt="" />
               </div>
             </div>
@@ -92,14 +95,14 @@
         </section>
         <section class="driver-section">
           <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg content">
+            <div class="row align-items-center container3">
+              <div class="col-lg content content3">
                 <span class="fw-bold tag">Driver</span>
                 <h2 class="fw-normal">Drive with Us, Drive with Purpose</h2>
                 <p>Become a RideGuardian designated driver. Apply easily through our platform, meet our standards, and enjoy the benefits of ensuring safe journeys for all</p>
                 <a href="#" class="btn btn-primary rounded-pill border-0 px-4 py-3 py-lg-4">Learn more</a>
               </div>
-              <div class="col-lg image">
+              <div class="col-lg image image3">
                 <img src="./assets/images/riders.jpg" srcset="./assets/images/riders.jpg 1x, ./assets/images/riders-2x.jpg 2x" alt="" />
               </div>
             </div>
@@ -133,5 +136,56 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+      // Wait for DOM content to be fully loaded
+      document.addEventListener('DOMContentLoaded', function () {
+        gsap.registerPlugin(ScrollTrigger);
+
+        let startValue, endValue;
+
+        // Check if screen width is less than or equal to 767px (mobile)
+        if (window.innerWidth <= 767) {
+          startValue = 'top 100%'; // Default to '0% top' if no data attribute is specified
+          endValue = 'bottom 80%'; // Default to '100% bottom' if no data attribute is specified
+        } else {
+          startValue = 'top 95%'; // Default to '0% center' if no data attribute is specified
+          endValue = 'bottom 20%'; // Default to '100% center' if no data attribute is specified
+        }
+
+        // Initialize GSAP timeline 1
+        const tl1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.container1',
+            start: startValue, // Trigger animation when container reaches the center of the viewport
+            end: endValue, // End animation when container reaches the bottom of the viewport
+            scrub: true, // Smoothly scrub through animations
+          },
+        });
+        tl1.fromTo('.content1', { opacity: 0, x: -100 }, { opacity: 1, x: 0 }).fromTo('.image1', { x: 50 }, { x: 0 }, '-=0.3'); // Delay image animation relative to content animation
+
+        // Initialize GSAP timeline 2
+        const tl2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.container2',
+            start: startValue, // Trigger animation when container reaches the center of the viewport
+            end: endValue, // End animation when container reaches the bottom of the viewport
+            scrub: true, // Smoothly scrub through animations
+          },
+        });
+        tl2.fromTo('.content2', { opacity: 0, x: 100 }, { opacity: 1, x: 0 }).fromTo('.image2', { x: -50 }, { x: 0 }, '-=0.3'); // Delay image animation relative to content animation
+
+        // Initialize GSAP timeline 3
+        const tl3 = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.container3',
+            start: startValue, // Trigger animation when container reaches the center of the viewport
+            end: endValue, // End animation when container reaches the bottom of the viewport
+            scrub: true, // Smoothly scrub through animations
+          },
+        });
+        tl3.fromTo('.content3', { opacity: 0, x: -100 }, { opacity: 1, x: 0 }).fromTo('.image3', { x: 50 }, { x: 0 }, '-=0.3'); // Delay image animation relative to content animation
+      });
+    </script>
   </body>
 </html>

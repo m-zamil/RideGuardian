@@ -1,4 +1,7 @@
 /* ====== Bootstrap Overrides ====== */
+body {
+  overflow-x: hidden;
+}
 img {
   max-width: 100%;
 }
@@ -122,9 +125,9 @@ main {
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 70px;
-  padding: 70px 0;
-  width: 94%;
+  gap: 100px;
+  padding: 100px 0;
+  width: 90%;
   margin: 0 auto;
 }
 .content-wrapper section .row {
@@ -193,7 +196,6 @@ footer {
   .content-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 140px;
     padding: 140px 0;
     width: 84%;
     margin: 0 auto;
@@ -218,6 +220,9 @@ footer {
   }
   .tag {
     font-size: 20px;
+  }
+  .rider-section .content {
+    order: 1;
   }
   /* Footer */
   footer {
